@@ -6,7 +6,6 @@ const backendApi = process.env.NEXT_PUBLIC_API_URL;
 
 export async function GET(req: any) {
     const {accessToken} = await getAccessToken(req);
-
     console.log(accessToken);
     const response = await fetch(`${backendApi}/api/user`,
         {

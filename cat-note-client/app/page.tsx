@@ -1,5 +1,5 @@
 'use client'
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { NextResponse } from "next/server";
 //import { getTasks } from "./api/users/route";
@@ -23,12 +23,13 @@ function Page() {
     });
 
     if (myUser) {
-      console.log("4324")
+      console.log("4324");
       const data = await myUser.json();
 
       if (data) {
         console.log(data)
       }
+      console.log("ошибка")
     }
   };
 
@@ -37,7 +38,7 @@ function Page() {
     return (
       <>
         <div onClick={() => getTasksClick()}>click</div>
-        <a href="/api/auth/login">Login</a>
+        <a href="/api/auth/logout">Logout</a>
         <div>Hi</div>
       </>
     )
@@ -46,6 +47,7 @@ function Page() {
     console.log("нет");
     return (
       <>
+        <a href="/api/auth/login">Login</a>
       </>
     )
   }
