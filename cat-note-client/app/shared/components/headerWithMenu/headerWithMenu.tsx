@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react';
+import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,7 +15,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import Link from 'next/link';
 
 function HeaderWithMenu() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
