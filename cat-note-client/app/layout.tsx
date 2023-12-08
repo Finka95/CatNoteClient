@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { UserProvider } from '@auth0/nextjs-auth0/client';
+import Header from "@/app/components/widgets/headerWithMenu/header";
 
 export const metadata: Metadata = {
   title: 'CatNote',
@@ -15,7 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body>{children}</body>
+        <body>
+            <Header/>
+            {children}
+        </body>
       </UserProvider>
     </html>
   )
