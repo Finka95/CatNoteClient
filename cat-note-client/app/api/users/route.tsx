@@ -7,7 +7,7 @@ export async function POST(req: any) {
   const {accessToken} = await getAccessToken(req);
   const body = await req.json();
 
-  const response = await fetch(`${backendApi}/api/user/check/id`,
+  const response = await fetch(`${backendApi}/api/user/check/user`,
     {
       method: 'POST',
       headers: {
