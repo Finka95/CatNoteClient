@@ -13,8 +13,10 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import PetsIcon from '@mui/icons-material/Pets';
 import Link from 'next/link';
+import NavItem from "@/app/components/ui-components/menuItem/navItem";
+import NavButton from "@/app/components/ui-components/navButton/navButton";
 
-function HeaderWithMenu() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event: any) => {
@@ -77,23 +79,9 @@ function HeaderWithMenu() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <Link href="/pages/users">
-                <MenuItem>
-                  <Typography textAlign="center">Users</Typography>
-                </MenuItem>
-              </Link>
-
-              <Link href="/pages/tasks">
-                <MenuItem>
-                  <Typography textAlign="center">Tasks</Typography>
-                </MenuItem>
-              </Link>
-
-              <Link href="/pages/achievements">
-                <MenuItem>
-                  <Typography textAlign="center">Achievements</Typography>
-                </MenuItem>
-              </Link>
+              <NavItem route="users"/>
+              <NavItem route="tasks"/>
+              <NavItem route="achievements"/>
             </Menu>
           </Box>
           <PetsIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -116,31 +104,13 @@ function HeaderWithMenu() {
             CatNote
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Link href="/pages/users">
-              <Button
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Users
-              </Button>
-            </Link>
-            <Link href="/pages/tasks">
-              <Button
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Tasks
-              </Button>
-            </Link>
-            <Link href="/pages/achievements">
-              <Button
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Achievements
-              </Button>
-            </Link>
+            <NavButton route="users"/>
+            <NavButton route="tasks"/>
+            <NavButton route="achievements"/>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-export default HeaderWithMenu;
+export default Header;
