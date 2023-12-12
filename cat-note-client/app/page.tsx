@@ -2,7 +2,7 @@
 
 import {useUser} from "@auth0/nextjs-auth0/client";
 import {useRouter} from 'next/navigation'
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import Image from 'next/image'
 import {Roboto} from 'next/font/google'
 import Kitty from '../public/kitty.png'
@@ -17,8 +17,6 @@ const roboto = Roboto({
 export default function Home() {
   const router = useRouter();
   const {user} = useUser();
-  const [myUsers, setMyUsers] = useState<any>([]);
-  const [receivedUser, setReceivedUser] = useState<any>()
 
   useEffect(() => {
     const getCheckUser = async () => {
@@ -27,7 +25,6 @@ export default function Home() {
 
     if (user) {
       getCheckUser();
-      console.log(user)
     }
   }, [user])
 
