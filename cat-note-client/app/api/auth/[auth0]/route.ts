@@ -4,7 +4,7 @@ export const GET = handleAuth({
     login: handleLogin({
       authorizationParams: {
         audience: 'https://localhost:7165/api',
-        scope: ''
+        scope: 'openid email'
       }
     })
 })
