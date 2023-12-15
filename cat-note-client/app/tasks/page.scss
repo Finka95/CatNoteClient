@@ -1,0 +1,13 @@
+.tasksPage {
+    position: fixed;
+    top: 68.5px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 68.5px);
+}
+
+.react-flow__panel,
+.react-flow__handle,
+.tasksPage__background {
+    display: none;
+}
