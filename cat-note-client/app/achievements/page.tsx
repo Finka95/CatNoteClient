@@ -54,7 +54,7 @@ function AchievementsPage() {
         <div className="achievementsPage__title">Received achievements</div>
         {userAchievements && userAchievements.map(achievement => 
           // <Block key={achievement.id} text={`${achievement.title!} | ${achievement.description}`}/>
-          <BasicAccordion title={achievement.title!} description={achievement.description != null ?achievement.description : ""}/>
+          <BasicAccordion key={achievement.id} title={achievement.title!} description={achievement.description != null ?achievement.description : ""}/>
           )}
       </div>
 
@@ -62,7 +62,7 @@ function AchievementsPage() {
         <div className="achievementsPage__title">Not received achievements</div>
         {allAchievements && allAchievements.filter(achievement => !userAchievements.some(userAchievement => userAchievement.id === achievement.id)).map(achievement => 
           //<Block key={achievement.id} text={`${achievement.title!} | ${achievement.description}`}/>
-          <BasicAccordion title={achievement.title!} description={achievement.description != null ?achievement.description : ""}/>
+          <BasicAccordion key={achievement.id} title={achievement.title!} description={achievement.description != null ?achievement.description : ""}/>
           )}
       </div>
     </div>
