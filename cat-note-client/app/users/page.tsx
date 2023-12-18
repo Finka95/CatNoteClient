@@ -16,18 +16,14 @@ function UsersPage() {
     await fetch("/api/users", {method: "GET"})
       .then(async (res) => {
         const usersResponse : User[] = await res.json();
-        const targetUserId = localStorage.getItem("targetUserId" || "");
-        const users = usersResponse.filter(user => user.id != Number(targetUserId));
-        console.log(users);
-        console.log(usersResponse);
-        setUsers(users);
+        setUsers(usersResponse);
       })
   }
 
   return (
     <div className="usersPage">
       {users && users.map(user =>
-        <Block key={user.id} id={user.id!} text={user.userName!}/>
+        <Block key={user.id} id={user.id as number} text={user.userName as string}/>
       )}
     </div>
   );
