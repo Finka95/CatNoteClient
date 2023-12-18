@@ -6,11 +6,6 @@ function UsersPage() {
       Page for users
     </>
   );
-};
+}
 
 export default UsersPage;
-
-//pages
-//widgets
-//modules
-//UI-components
