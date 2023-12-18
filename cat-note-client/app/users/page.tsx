@@ -30,7 +30,7 @@ function UsersPage() {
   return (
     <div className="usersPage">
       {users && users.map(user =>
-        <Block key={user.id} text={user.userName!}/>
+        <Block key={user.id} id={user.id!} text={user.userName!}/>
       )}
     </div>
   );

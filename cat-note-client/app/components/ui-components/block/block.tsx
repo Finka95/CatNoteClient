@@ -3,13 +3,14 @@ import Paper from '@mui/material/Paper';
 import './block.scss';
 
 type Props = {
-  text: string
+  text: string,
+  id: number
 }
 
 const Block = (props : Props) => {
   return (
     <Paper className='blockPaper' variant='outlined'>
-      {props.text}
+      {props.id} | {props.text}
     </Paper>
   )
 }
