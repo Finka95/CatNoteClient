@@ -19,3 +19,17 @@ export async function POST(req: any) {
   const responseJson = await response.json();
   return NextResponse.json(responseJson);
 }
+
+export async function GET(req: any) {
+  const {accessToken} = await getAccessToken(req);
+
+  const response = await fetch(`${backendApi}/api/user`, {
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${accessToken}`
+    }
+  });
+
+  const responseJson = await response.json();
+  return NextResponse.json(responseJson);
+}

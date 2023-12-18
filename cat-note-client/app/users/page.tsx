@@ -1,10 +1,38 @@
-import React from 'react';
+'use client'
+
+import React, {useEffect, useState} from 'react';
 import './page.scss';
+import Block from "@/app/components/ui-components/block/block";
+import {User} from "@/app/ts/interfaces/user";
+
 function UsersPage() {
+  const[users, setUsers] = useState<User[]>([]);
+  const[targetUserId, setTargetUserId] = useState<string>();
+
+  useEffect(() => {
+    // const targetUserId = localStorage.getItem("targetUserId");
+    // setTargetUserId(targetUserId || "");
+    getUsers();
+  }, []);
+
+  const getUsers = async () => {
+    await fetch("/api/users", {method: "GET"})
+      .then(async (res) => {
+        const usersResponse : User[] = await res.json();
+        const targetUserId = localStorage.getItem("targetUserId" || "");
+        const users = usersResponse.filter(user => user.id != Number(targetUserId));
+        console.log(users);
+        console.log(usersResponse);
+        setUsers(users);
+      })
+  }
+
   return (
-    <>
-      Page for users
-    </>
+    <div className="usersPage">
+      {users && users.map(user =>
+        <Block key={user.id} text={user.userName!}/>
+      )}
+    </div>
   );
 }
 
