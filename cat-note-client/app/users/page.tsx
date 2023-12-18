@@ -7,11 +7,8 @@ import {User} from "@/app/ts/interfaces/user";
 
 function UsersPage() {
   const[users, setUsers] = useState<User[]>([]);
-  const[targetUserId, setTargetUserId] = useState<string>();
 
   useEffect(() => {
-    // const targetUserId = localStorage.getItem("targetUserId");
-    // setTargetUserId(targetUserId || "");
     getUsers();
   }, []);
 
