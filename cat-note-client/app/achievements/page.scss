@@ -1,0 +1,19 @@
+.achievementsPage {
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.16);
+  border-radius: 0.3rem;
+  min-height: 15rem;
+  margin-top: 2rem;
+  max-width: 62.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.9rem 0.6rem;
+}
+
+.achievementsPage__title {
+  font-size: 1.5rem;
+}
+
+.achievementsPage__received, .achievementsPage__notReceived{
+  padding: 5px;
+  min-height: 5rem;
+}
