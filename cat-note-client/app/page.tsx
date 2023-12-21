@@ -38,6 +38,7 @@ export default function Home() {
     })
       .then(async (res) => {
         const userResponse = await res.json();
+
         if (userResponse){
           localStorage.setItem("targetUserId", userResponse.id);
           handleRouter();
