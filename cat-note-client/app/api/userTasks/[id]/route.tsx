@@ -5,7 +5,6 @@ const backendApi = process.env.NEXT_PUBLIC_API_URL;
 
 export async function GET(req: any, res: NextResponse) {
   const {accessToken} = await getAccessToken(req);
-
   const userId = req.url.slice(req.url.lastIndexOf('/') + 1);
 
   const response = await fetch(`${backendApi}/api/task/user/${userId}`, {
@@ -23,8 +22,8 @@ export async function DELETE(req: any, res: NextResponse) {
   const taskId = req.url.slice(req.url.lastIndexOf('/') + 1);
 
   await fetch(`${backendApi}/api/task/${taskId}`, {
+    method: 'DELETE',
     headers: {
-      method: 'DELETE',
       Authorization: `Bearer ${accessToken}`
     }
   });

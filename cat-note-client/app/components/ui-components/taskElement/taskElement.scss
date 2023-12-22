@@ -1,0 +1,42 @@
+.taskElement {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #e7e7e7;
+  height: 1.5rem;
+  margin-bottom: 0.3rem;
+
+  .MuiInputBase-root {
+    display: block;
+    margin: auto;
+  }
+
+  .MuiNativeSelect-select {
+    margin-top: 0.2rem;
+    padding-right: 0 !important;
+  }
+}
+
+.taskElement__title {
+  width: 45%;
+  font-size: 0.75rem;
+  margin: auto auto auto 0.1rem;
+}
+
+.taskElement__edit, .taskElement__delete {
+  width: 10%;
+}
+
+.taskElement__select {
+  width: 35%;
+  height: 1.4rem;
+}
+
+.taskElement__select__option{
+  font-size: 1rem;
+}
+
+.taskElement__input{
+  display: flex;
+  height: 1.1rem;
+  margin-bottom: 0.5rem;
+}

@@ -4,5 +4,6 @@ export interface Task {
   id?: number,
   title?: string,
   status: TaskStatus,
-  date: Date
+  date: Date,
+  userId: number
 }
