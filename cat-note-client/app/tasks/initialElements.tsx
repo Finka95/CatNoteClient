@@ -1,8 +1,8 @@
 export default [
   {
-    type: 'input',
+    type: 'tasksNode',
     id: '1',
-    data: { label: <div style={{ color: 'blue' }}>cat</div>},
+    data: "",
     position: { x: 150, y: 0 },
   }
 ];
