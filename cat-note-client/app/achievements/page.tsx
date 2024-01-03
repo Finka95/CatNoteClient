@@ -29,7 +29,7 @@ function AchievementsPage() {
   const getOtherAchievements = async () => {
     await fetch("/api/achievements", {method: "GET"})
       .then(async (res) => {
-        const achievementsResponse : User[] = await res.json();
+        const achievementsResponse : Achievement[] = await res.json();
         setAllAchievements(achievementsResponse);
       })
   }
@@ -42,7 +42,7 @@ function AchievementsPage() {
       }
     })
       .then(async (res) => {
-        const achievementsResponse : User[] = await res.json();
+        const achievementsResponse : Achievement[] = await res.json();
         setUserAchievements(achievementsResponse);
       })
   }
