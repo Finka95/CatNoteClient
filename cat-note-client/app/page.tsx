@@ -41,6 +41,7 @@ export default function Home() {
 
         if (userResponse){
           localStorage.setItem("targetUserId", userResponse.id);
+          localStorage.setItem("isAdmin", userResponse.isAdmin);
           handleRouter();
         }
       })
