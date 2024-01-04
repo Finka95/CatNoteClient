@@ -20,6 +20,23 @@ export async function POST(req: any) {
   return NextResponse.json(responseJson);
 }
 
+export async function PUT(req: any){
+  const  {accessToken} = await getAccessToken(req);
+  const body = await req.json();
+
+  const response = await fetch(`${backendApi}/api/user`, {
+    method: 'PUT',
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${accessToken}`
+    },
+    body: JSON.stringify(body)
+  });
+
+  const responseJson = await response.json();
+  return NextResponse.json(responseJson);
+}
+
 export async function GET(req: any) {
   const {accessToken} = await getAccessToken(req);
 

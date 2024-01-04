@@ -5,5 +5,6 @@ export interface User {
   id?: number,
   userName?: string;
   tasks?: Task[],
-  achievements?: Achievement[]
+  achievements?: Achievement[],
+  isAdmin?: boolean
 }

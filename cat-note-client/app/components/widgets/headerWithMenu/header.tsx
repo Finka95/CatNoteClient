@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,15 +9,18 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import PetsIcon from '@mui/icons-material/Pets';
-import Link from 'next/link';
 import NavItem from "@/app/components/ui-components/menuItem/navItem";
 import NavButton from "@/app/components/ui-components/navButton/navButton";
+import ButtonVariant from "@/app/components/ui-components/button/buttonVariant";
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === "true")
+  }, []);
 
   const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
@@ -76,10 +79,10 @@ function Header() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: {xs: 'block', md: 'none'},
               }}
             >
-              <NavItem route="users"/>
+              {isAdmin && <NavItem route="users"/>}
               <NavItem route="tasks"/>
               <NavItem route="achievements"/>
             </Menu>
@@ -104,10 +107,12 @@ function Header() {
             CatNote
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <NavButton route="users"/>
+            {isAdmin && <NavButton route="users"/>}
             <NavButton route="tasks"/>
             <NavButton route="achievements"/>
           </Box>
+
+          <ButtonVariant route="/api/auth/logout" variant="contained" text="Logout"/>
         </Toolbar>
       </Container>
     </AppBar>

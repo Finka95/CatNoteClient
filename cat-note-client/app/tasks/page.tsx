@@ -10,7 +10,6 @@ import {Task} from "@/app/ts/interfaces/task";
 import TopUsersNode from "@/app/components/modules/topUsersNode/topUsersNode";
 import {User} from "@/app/ts/interfaces/user";
 
-
 function TasksPage() {
   const [nodes, setNodes, onNodesChange] = useNodesState(InitialNodes);
   const [userTasks, setUserTasks] = useState<Task[]>([]);
