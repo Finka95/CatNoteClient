@@ -9,6 +9,14 @@
   }
 }
 
+.tasksPage__paw {
+  position: absolute;
+  width: 4rem;
+  z-index: 1;
+  top: -1rem;
+  margin-left: 1rem;
+}
+
 .react-flow__panel,
 .react-flow__handle,
 .tasksPage__background {
