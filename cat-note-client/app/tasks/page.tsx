@@ -7,21 +7,49 @@ import 'reactflow/dist/style.css';
 import './page.scss';
 import TasksNode from "@/app/components/modules/tasksNode/tasksNode";
 import {Task} from "@/app/ts/interfaces/task";
+import TopUsersNode from "@/app/components/modules/topUsersNode/topUsersNode";
+import {User} from "@/app/ts/interfaces/user";
 
 
 function TasksPage() {
   const [nodes, setNodes, onNodesChange] = useNodesState(InitialNodes);
   const [userTasks, setUserTasks] = useState<Task[]>([]);
+  const [topUsers, setTopUsers] = useState<User[]>([]);
   const [nodeTypes, setNodeTypes] = useState({
-    tasksNode: () => <TasksNode tasks={userTasks} onTaskCreate={(task : Task) => createTask(task)} onTaskDelete={(taskId: number) => deleteTask(taskId)} onTaskUpdate={(task: Task) => updateTask(task)}/> });
+    tasksNode: () => <TasksNode tasks={userTasks} onTaskCreate={(task : Task) => createTask(task)} onTaskDelete={(taskId: number) => deleteTask(taskId)} onTaskUpdate={(task: Task) => updateTask(task)}/>,
+    topUsers: () => <TopUsersNode topUsers={topUsers}/>});
 
   useEffect(() => {
     loadTasks();
+    loadTopUsers();
   }, []);
 
   useEffect(() => {
-    setNodeTypes({ tasksNode: () => <TasksNode tasks={userTasks} onTaskCreate={(task : Task) => createTask(task)} onTaskDelete={(taskId: number) => deleteTask(taskId)} onTaskUpdate={(task: Task) => updateTask(task)}/>})
+    setNodeTypes({
+      tasksNode: () => (
+        <TasksNode
+          tasks={userTasks}
+          onTaskCreate={(task: Task) => createTask(task)}
+          onTaskDelete={(taskId: number) => deleteTask(taskId)}
+          onTaskUpdate={(task: Task) => updateTask(task)}
+        />
+      ),
+      topUsers: () => <TopUsersNode topUsers={topUsers} />
+    });
   }, [userTasks]);
+
+  const loadTopUsers = async () => {
+    await fetch( `api/topUsers`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(async (res) => {
+        const topUsersResponse : User[] = await res.json();
+        setTopUsers(topUsersResponse);
+      })
+  }
 
   const createTask = async (task: Task) => {
     await fetch(`/api/userTasks`, {
@@ -30,7 +58,7 @@ function TasksPage() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(task)
-    })
+    });
 
     await loadTasks()
   }
@@ -40,7 +68,7 @@ function TasksPage() {
 
     await fetch(`/api/userTasks/${taskId}`, {
       method: "DELETE"
-    })
+    });
 
     await loadTasks();
   }
@@ -52,7 +80,7 @@ function TasksPage() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(task)
-    })
+    });
 
     await loadTasks();
   }
