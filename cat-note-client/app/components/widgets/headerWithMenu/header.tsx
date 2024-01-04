@@ -12,6 +12,7 @@ import Container from '@mui/material/Container';
 import PetsIcon from '@mui/icons-material/Pets';
 import NavItem from "@/app/components/ui-components/menuItem/navItem";
 import NavButton from "@/app/components/ui-components/navButton/navButton";
+import ButtonVariant from "@/app/components/ui-components/button/buttonVariant";
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -78,7 +79,7 @@ function Header() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: {xs: 'block', md: 'none'},
               }}
             >
               {isAdmin && <NavItem route="users"/>}
@@ -110,6 +111,8 @@ function Header() {
             <NavButton route="tasks"/>
             <NavButton route="achievements"/>
           </Box>
+
+          <ButtonVariant route="/api/auth/logout" variant="contained" text="Logout"/>
         </Toolbar>
       </Container>
     </AppBar>
