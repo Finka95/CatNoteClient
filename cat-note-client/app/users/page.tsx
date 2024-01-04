@@ -45,15 +45,22 @@ function UsersPage() {
 
   return (
     <div className="usersPage">
-      {users && users.map(user =>
-        <Block
-          key={user.id}
-          id={user.id as number}
-          checked={user.isAdmin || false}
-          handleChange={(event: React.ChangeEvent<HTMLInputElement>, userId: number) => changeRoleClick(event, userId)}
-          text={user.userName as string}
-          label="isAdmin"/>
-      )}
+      <div className="usersPage__content">
+        <div className="usersPage__header">
+          <div className="usersPage__header__leftCircle"></div>
+          <div className="usersPage__header__rightCircle"></div>
+        </div>
+
+        {users && users.map(user =>
+          <Block
+            key={user.id}
+            id={user.id as number}
+            checked={user.isAdmin || false}
+            handleChange={(event: React.ChangeEvent<HTMLInputElement>, userId: number) => changeRoleClick(event, userId)}
+            text={user.userName as string}
+            label="isAdmin"/>
+        )}
+      </div>
     </div>
   );
 }

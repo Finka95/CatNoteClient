@@ -1,10 +1,12 @@
 .tasksNode {
   min-height: 5rem;
   width: 15rem;
-  box-shadow: 0 .2rem .9rem 0 rgba(0, 0, 0, .16);
+  border: 0.2rem solid #161616;
+  border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
+  background-color: #161616;
 
   .css-1x51dt5-MuiInputBase-input-MuiInput-input{
     font-size: 0.5rem;
@@ -21,9 +23,33 @@
   }
 }
 
-.tasksNode__title {
+.tasksNode__header__leftCircle,
+.tasksNode__header__rightCircle{
+  width: .8rem;
+  height: .8rem;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+}
+
+.tasksNode__header__leftCircle {
+  margin-right: auto;
+}
+
+.tasksNode__header__rightCircle {
+  margin-left: auto;
+}
+
+.tasksNode__header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.tasksNode__header__title {
   text-align: center;
-  font-size: 0.5rem;
+  font-size: 0.9rem;
+  font-weight:700;
+  color: #D3D3D3;
 }
 
 .tasksNode__createTask__input {
@@ -58,7 +84,7 @@
 }
 
 .tasksNode__userTasks__inProgress, .tasksNode__userTasks__done{
-  border-top: 1px solid rgba(0, 0, 0, .16);
+  border-top: 0.2rem solid #D3D3D3;
   padding-top: 0.5rem;
   margin-top: 0.5rem;
 }

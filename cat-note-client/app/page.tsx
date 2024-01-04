@@ -53,18 +53,26 @@ export default function Home() {
 
   return (
     <div className="loginPage">
-      <Image src={Kitty} alt="Picture of the author"/>
-      <div className="loginPage__block">
-        <div className={`${roboto.className} loginPage__block__textWelcome`}>
-          Welcome to Cat Note!
-        </div>
-        {user == null
-          ? <div className="loginPage__block__button">
-            <ButtonVariant route="/api/auth/login" variant="outlined" text="Login"/>
+      <div className="loginPage__content">
+        <Image src={Kitty} alt="Picture of the author"/>
+        <div className="loginPage__block">
+
+          <div className="loginPage__block__header">
+            <div className="loginPage__block__header__leftCircle"></div>
+            <div className={`${roboto.className} loginPage__block__textWelcome`}>
+              Welcome to Cat Note!
+            </div>
+            <div className="loginPage__block__header__rightCircle"></div>
           </div>
-          : <div className="loginPage__block__button">
-            <ButtonVariant route="/api/auth/logout" variant="outlined" text="Logout"/>
-          </div>}
+
+          {user == null
+            ? <div className="loginPage__block__button">
+              <ButtonVariant route="/api/auth/login" variant="outlined" text="Login"/>
+            </div>
+            : <div className="loginPage__block__button">
+              <ButtonVariant route="/api/auth/logout" variant="outlined" text="Logout"/>
+            </div>}
+        </div>
       </div>
     </div>
   )

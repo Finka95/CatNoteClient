@@ -17,12 +17,8 @@ type Props = {
 }
 
 const TasksNode = (props: Props) => {
-  const [showCreateTask, setShowCreateTask] = useState<boolean>(false);
-  const [newTaskTitle, setNewTaskTitle] = useState<string>("Title");
   const [newTask, setNewTask] = useState<Task>();
   const [userTasks, setUserTasks] = useState<Task[]>();
-  const [newTitle, setNewTitle] = useState<string>()
-
 
   useEffect(() => {
     setUserTasks(props.tasks)
@@ -69,9 +65,13 @@ const TasksNode = (props: Props) => {
 
   return (
     <div className="tasksNode">
-      <div className="tasksNode__title">Tasks</div>
+      <div className="tasksNode__header">
+        <div className="tasksNode__header__leftCircle"></div>
+        <div className="tasksNode__header__title">Tasks</div>
+        <div className="tasksNode__header__rightCircle"></div>
+      </div>
       <div className="tasksNode__createTask">
-        <div className="tasksNode__createTask__button">
+      <div className="tasksNode__createTask__button">
           <ButtonClick onClick={() => openInputCreateTaskClick()} text="Create task"/>
         </div>
 

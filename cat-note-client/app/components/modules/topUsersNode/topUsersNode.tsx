@@ -11,7 +11,11 @@ type Props = {
 const TopUsersNode = (props: Props) => {
   return (
     <div className="topUsers">
-      <div className="topUsers__title">Top users</div>
+      <div className="topUsers__header">
+        <div className="topUsers__header__leftCircle"></div>
+        <div className="topUsers__header__title">Top users</div>
+        <div className="topUsers__header__rightCircle"></div>
+      </div>
 
       <div>
         {props.topUsers.map(user =>

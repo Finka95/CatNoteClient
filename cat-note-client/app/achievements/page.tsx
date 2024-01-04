@@ -49,18 +49,24 @@ function AchievementsPage() {
 
   return (
     <div className="achievementsPage">
-      <div className="achievementsPage__received">
-        <div className="achievementsPage__title">Received achievements</div>
-        {userAchievements && userAchievements.map(achievement =>
-          <BasicAccordion key={achievement.id} title={achievement?.title} description={achievement?.description}/>
-        )}
-      </div>
+      <div className="achievementsPage__content">
+        <div className="achievementsPage__header">
+          <div className="achievementsPage__header__leftCircle"></div>
+          <div className="achievementsPage__header__rightCircle"></div>
+        </div>
+        <div className="achievementsPage__received">
+          <div className="achievementsPage__title">Received achievements</div>
+          {userAchievements && userAchievements.map(achievement =>
+            <BasicAccordion key={achievement.id} title={achievement?.title} description={achievement?.description}/>
+          )}
+        </div>
 
-      <div className="achievementsPage__notReceived">
-        <div className="achievementsPage__title">Not received achievements</div>
-        {allAchievements && allAchievements.filter(achievement => !userAchievements.some(userAchievement => userAchievement.id === achievement.id)).map(achievement =>
-          <BasicAccordion key={achievement.id} title={achievement?.title} description={achievement?.description}/>
-        )}
+        <div className="achievementsPage__notReceived">
+          <div className="achievementsPage__title">Not received achievements</div>
+          {allAchievements && allAchievements.filter(achievement => !userAchievements.some(userAchievement => userAchievement.id === achievement.id)).map(achievement =>
+            <BasicAccordion key={achievement.id} title={achievement?.title} description={achievement?.description}/>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,40 @@
-.usersPage {
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.16);
+.usersPage__content {
+  border: 0.2rem solid #161616;
   border-radius: 0.3rem;
   min-height: 20rem;
-  margin-top: 2rem;
   max-width: 60rem;
+  margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem 0.9rem;
+  padding: .5rem .9rem;
+  background-color: #161616;
+}
+
+.usersPage__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.usersPage__header__leftCircle,
+.usersPage__header__rightCircle{
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  margin-bottom: .7rem;
+}
+
+.usersPage__header__leftCircle {
+  margin-right: auto;
+}
+
+.usersPage {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 68.5px);
+  background-color: #D3D3D3;
+
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+    color: #161616;
+  }
 }
