@@ -1,9 +1,10 @@
 .taskElement {
   display: flex;
   flex-direction: row;
-  border: 1px solid #e7e7e7;
   height: 1.5rem;
   margin-bottom: 0.3rem;
+  background-color: #D3D3D3;
+  color: #161616;
 
   .MuiInputBase-root {
     display: block;
@@ -29,6 +30,15 @@
 .taskElement__select {
   width: 35%;
   height: 1.4rem;
+
+  .css-1dmqq7i-MuiNativeSelect-select-MuiInputBase-input-MuiInput-input:not([multiple]) option {
+    background-color: #D3D3D3;
+
+    &:hover {
+      background-color: #161616;
+      color: #D3D3D3;
+    }
+  }
 }
 
 .taskElement__select__option{

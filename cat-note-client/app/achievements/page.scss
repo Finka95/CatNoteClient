@@ -1,19 +1,58 @@
-.achievementsPage {
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.16);
+.achievementsPage__content {
+  border: 0.2rem solid #161616;
   border-radius: 0.3rem;
   min-height: 15rem;
-  margin-top: 2rem;
   max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.9rem 0.6rem;
+  padding: .5rem .9rem .6rem .9rem;
+  background-color: #161616;
+
+  .basicAccordion{
+    .MuiPaper-root{
+      background-color: #D3D3D3;
+      border: .1rem solid #161616;
+    }
+  }
+}
+
+.achievementsPage__header{
+  display: flex;
+  flex-direction: row;
+}
+
+.achievementsPage__header__leftCircle,
+.achievementsPage__header__rightCircle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+}
+
+.achievementsPage__header__leftCircle {
+  margin-right: auto;
+}
+
+.achievementsPage {
+  position: absolute;
+  width: 100%;
+  padding-top: 2rem;
+  height: calc(100% - 68.5px);
+  background-color: #D3D3D3;
 }
 
 .achievementsPage__title {
   font-size: 1.5rem;
+  font-weight: 700;
+  color: #D3D3D3;
 }
 
-.achievementsPage__received, .achievementsPage__notReceived{
-  padding: 5px;
+.achievementsPage__received {
+  padding: 0 0.2rem 0.2rem 0.2rem;
+  min-height: 5rem;
+}
+
+.achievementsPage__notReceived{
+  padding: 0.2rem;
   min-height: 5rem;
 }

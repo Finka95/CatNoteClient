@@ -1,10 +1,18 @@
+.loginPage{
+  background-color: #D3D3D3;
+  height: calc(100% - 68.5px);
+  position: absolute;
+  width: 100%;
+}
+
 .loginPage__block{
   width: 250px;
   height: 150px;
-  background-color: #1976d2;
+  background-color: #161616;
   border-radius: 3px;
-  box-shadow: 3px 3px 3px rgba(25, 118, 210, 0.33);
+  box-shadow: 3px 3px 3px rgb(94, 94, 94);
   margin: 0 auto;
+  padding: .3rem .4rem 0 .4rem;
 }
 
 .loginPage__block__button{
@@ -18,16 +26,37 @@
   font-size: 20px;
   text-align: center;
   color: white;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
-.loginPage{
+.loginPage__content{
   max-width: 417px;
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
   top: calc(50% - 185px);
+}
+
+.loginPage__block__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.loginPage__block__header__leftCircle,
+.loginPage__block__header__rightCircle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+}
+
+.loginPage__block__header__leftCircle {
+  margin-right: auto;
+}
+
+.loginPage__block__header__rightCircle {
+  margin-left: auto;
 }
 
 html, body {

@@ -10,7 +10,7 @@ type Props = {
 
 const ButtonVariant = (props : Props) => {
   return (
-    <div className={props.variant == "outlined" ? "buttonVariant": ""}>
+    <div className="buttonVariant">
       <Button href={`${props.route}`} variant={props.variant == "outlined" ? "outlined": "contained"}>{props.text}</Button>
     </div>
   );

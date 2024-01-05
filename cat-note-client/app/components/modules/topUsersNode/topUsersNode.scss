@@ -1,10 +1,35 @@
 .topUsers {
   min-height: 5rem;
   width: 15rem;
-  box-shadow: 0 .2rem .9rem 0 rgba(0, 0, 0, .16);
+  border: 0.2rem solid #161616;
+  border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
+  background-color: #161616;
+}
+
+
+.topUsers__header__leftCircle,
+.topUsers__header__rightCircle{
+  width: .8rem;
+  height: .8rem;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+}
+
+.topUsers__header__leftCircle {
+  margin-right: auto;
+}
+
+.topUsers__header__rightCircle {
+  margin-left: auto;
+}
+
+.topUsers__header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .topUsers__user {
@@ -12,14 +37,16 @@
   flex-direction: row;
 
   font-size: 0.7rem;
-  border: 1px solid #e5e5e5;
   margin: 0.3rem;
-  padding-left: 0.1rem;
+  padding: .2rem 0 .2rem .2rem;
+  background-color: #D3D3D3;
 }
 
-.topUsers__title {
+.topUsers__header__title {
   text-align: center;
-  font-size: 0.5rem;
+  font-size: 0.9rem;
+  font-weight:700;
+  color: #D3D3D3;
 }
 
 .topUsers__user__userName {
